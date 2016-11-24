@@ -1,0 +1,26 @@
+angular
+	.module('login',['ui.materialize','ngRoute'])
+	.config(function($routeProvider){
+	    $routeProvider
+		.when('/',{
+			templateUrl:'views/login.html',
+			controller:'login'
+		})
+		.when('/login',{
+			templateUrl:'views/login.html',
+			controller:'login'
+		})
+		.when('/session',{
+			templateUrl:'views/session.html',
+			controller:'session'
+		})
+		.when('/applications',{
+			templateUrl:'views/applications.html',
+			controller:'applications'
+		})
+		.when('/logout',{
+			templateUrl:'views/logout.html',
+			controller:'logout'
+		})
+		.otherwise({redirectTo:'/'});
+	});
