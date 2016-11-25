@@ -1,5 +1,5 @@
 angular
-.module('login')
+.module('legapp')
 .factory('$session',function($http,$location){
     return {
         start:function(user){
@@ -17,7 +17,7 @@ angular
             for(i in sessionStorage){
                 delete sessionStorage[i];
             }
-            $location.path('/login');
+            document.location.href='/login/#/login';
         },
         get:function(key){
             return sessionStorage.getItem(key);
@@ -32,7 +32,9 @@ angular
                 date = new Date();
                 diff = (date.valueOf() - parseInt(sessionStorage.getItem('lgdt'))) / 1000;
                 if(diff <= 3600){
-                    $http.get('/rest/ful/sesion.php/status')
+                    $http
+                        .get('/rest/ful/session.php/status')
+                        .error(function(){$this.destroy();})
                         .success(function(json){
                             if(json.result){
                                 date = new Date();
@@ -42,8 +44,7 @@ angular
                             else {
                                 $this.destroy();
                             }
-                        })
-                        .error(function(){$this.destroy();});
+                        });
                 }
                 else {
                     $this.destroy();    

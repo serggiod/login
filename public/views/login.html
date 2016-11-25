@@ -1,2 +1,50 @@
-<ng-include src="'views/widgets/base.html'"></ng-include>
-<ng-include src="'views/dialogs/login.html'"></ng-include>
+<div class="row container rowpos">
+	<div class="col s12 m6 l6 offset-m1 offset-m3 offset-l3">
+		<div class="card white z-depth-2">
+
+			<!-- tarjeta: Titulo del Formulario -->
+			<div class="card grey lighten-2 z-depth-2 center">
+				<span class="card-title">
+					<img src="/imgcdn/commons/jujuy.png" class="responsive-img circle" style="max-width:50px;" />
+					<br/>
+					Legislatura de Jujuy
+				</span>
+			</div>
+
+			<!-- Tarjeta: Formulario de Login -->
+			<div class="card-content white">
+
+				<div class="row">
+
+					<!-- Mensaje de alerta -->
+					<div class="input-field col s12 m12 l12 {{alert.type}}" style="padding:15px;">
+						{{alert.text}}
+					</div>
+
+					<!-- Campo Usuario -->
+					<div class="input-field col s12 m12 l12">
+						<input id="usuario" type="text"     class="form-control" maxlength="13"  ng-model="usuario">
+						<label for="usuario">Usuario:</label>
+					</div>
+
+					<!-- Campo Password -->
+					<div class="input-field col s12 m12 l12">
+						<input id="password" type="password" class="form-control" maxlength="20"  ng-model="password">
+						<label for="password">Password:</label>
+					</div>
+
+				</div>
+				
+			</div>
+
+			<!-- Tarjeta: Botones con acciones -->
+			<div class="card-action blue darken-2">
+				<a class="btn red darken-1" ng-click="login()">
+					Ingresar
+					<i class="icons ion-android-send"></i>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>

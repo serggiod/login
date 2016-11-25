@@ -1,5 +1,5 @@
 angular
-	.module('login',['ui.materialize','ngRoute'])
+	.module('legapp',['ngRoute','angular-md5','ui.materialize'])
 	.config(function($routeProvider){
 	    $routeProvider
 		.when('/',{
@@ -9,10 +9,6 @@ angular
 		.when('/login',{
 			templateUrl:'views/login.html',
 			controller:'login'
-		})
-		.when('/session',{
-			templateUrl:'views/session.html',
-			controller:'session'
 		})
 		.when('/applications',{
 			templateUrl:'views/applications.html',

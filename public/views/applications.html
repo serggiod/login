@@ -1,2 +1,38 @@
-<ng-include src="'views/widgets/base.html'"></ng-include>
-<ng-include src="'views/dialogs/applications.html'"></ng-include>
+<div class="row container rowpos">
+	<div class="col s12 m6 l6 offset-m1 offset-m3 offset-l3">
+		<div class="card white z-depth-2">
+
+			<!-- tarjeta: Titulo del Formulario -->
+			<div class="card grey lighten-2 z-depth-2 center">
+				<span class="card-title">
+					<img src="/imgcdn/commons/jujuy.png" class="responsive-img circle" style="max-width:50px;" />
+					<br/>
+					Legislatura de Jujuy
+				</span>
+			</div>
+
+			<!-- Tarjeta: Formulario de Login -->
+			<div class="card-content white">
+				<div class="row">
+                    <h5>Aplicaciones Disponibles</h5>
+                    <ul>
+                        <ng-repeat ng-repeat="a in applications">
+                            <li><a class="btn" href="/{{a.uriname}}">{{a.name}}</a></li>
+                        </ng-repeat>
+                    </ul>
+
+				</div>
+				
+			</div>
+
+			<!-- Tarjeta: Botones con acciones -->
+			<div class="card-action blue darken-2">
+				<a class="btn red darken-1" ng-click="logout()">
+					Salir
+					<i class="icons ion-android-send"></i>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>

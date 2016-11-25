@@ -1,21 +1,14 @@
 angular
-.module('login')
+.module('legapp')
 .controller('logout',function($scope,$location,$http,$session){
 
     // Aceptar.
-    $scope.aceptar = ()=>{
-        //$session.destroy();
-        alert('Destruir sesion.');
-    };
+    $scope.aceptar = ()=>{$session.destroy();};
     
     // Cancel.
-    $scope.cancelar = ()=>{
-        alert('Volver a la aplicacion actual.');
-    };
+    $scope.cancelar = ()=>{$location.path('/applications');};
 
-    $scope.init = ()=>{
-		$('#cargando').hide();
-	};
+    $scope.init = ()=>{$('#cargando').hide();};
 
     $scope.init();
 
